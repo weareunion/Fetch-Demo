@@ -64,7 +64,7 @@ The application includes comprehensive tests to ensure functionality and reliabi
    make test
    ```
 
-   This command will execute the test suite using Jest, providing detailed output on test results.
+   This command will execute the test suite using Jest, providing detailed output on test results within the Docker container, printed to your terminal. This command will also start the application in test mode.
 
 
 ### Example Requests
@@ -174,7 +174,7 @@ The `Makefile` provides convenient commands to build and run the application usi
 
 - **Rebuild**:
   We do not build every time we run. To ensure package changes make it through, we can rebuild.
-  
+
   ```bash
   make rebuild
   ```
