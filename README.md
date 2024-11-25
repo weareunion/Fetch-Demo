@@ -172,6 +172,13 @@ The `Makefile` provides convenient commands to build and run the application usi
   make test
   ```
 
+- **Rebuild**:
+  We do not build every time we run. To ensure package changes make it through, we can rebuild.
+  
+  ```bash
+  make rebuild
+  ```
+
 ### Environment Configuration
 
 The application uses environment variables for configuration. These are defined in the `docker-compose.yml` file:

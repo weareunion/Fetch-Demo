@@ -3,8 +3,15 @@ APP_IMAGE_NAME := fetch_app
 
 .PHONY: build
 build:
-	@echo "Building the application..."
-	docker-compose -f $(DOCKER_COMPOSE_FILE) build
+	@if [ -z "$$(docker images -q $(APP_IMAGE_NAME))" ] || [ "$(FORCE_REBUILD)" = "true" ]; then \
+		echo "Containers are not built or force rebuild is enabled. Building containers..."; \
+		docker-compose -f $(DOCKER_COMPOSE_FILE) build; \
+	else \
+		echo "Containers are already built."; \
+	fi
+
+.PHONY: rebuild
+rebuild: FORCE_REBUILD=true build
 
 .PHONY: run
 run:
@@ -16,13 +23,7 @@ start: build run
 	@echo "Application started successfully"
 
 .PHONY: test
-test:
+test: build
 	@echo "Running tests..."
-	@if [ -z "$$(docker images -q $(APP_IMAGE_NAME))" ]; then \
-		echo "Containers are not built. Building containers..."; \
-		docker-compose -f $(DOCKER_COMPOSE_FILE) build; \
-	else \
-		echo "Containers are already built."; \
-	fi
 	docker-compose -f $(DOCKER_COMPOSE_FILE) up -d
 	docker-compose -f $(DOCKER_COMPOSE_FILE) exec app sh -c "NODE_ENV=test npm run test"
