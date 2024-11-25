@@ -11,7 +11,9 @@ build:
 	fi
 
 .PHONY: rebuild
-rebuild: FORCE_REBUILD=true build
+rebuild: 
+	@echo "Forcing rebuild of containers..."
+	@$(MAKE) FORCE_REBUILD=true build
 
 .PHONY: run
 run:
