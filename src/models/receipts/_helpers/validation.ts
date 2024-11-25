@@ -1,4 +1,4 @@
-import UserPresentableError from "../../../_common/exceptions/UserPresentableError";
+import UserPresentableError from "../../../common/exceptions/UserPresentableError";
 
 /**
  * Validates that the input data is a non-null object.

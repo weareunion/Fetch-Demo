@@ -1,4 +1,4 @@
-import { sanitizeString } from "../../../_common/helpers";
+import { sanitizeString } from "../../../common/helpers";
 import { Receipt } from "../_types/Reciept";
 
 /**

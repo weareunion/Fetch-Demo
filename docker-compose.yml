@@ -9,7 +9,7 @@ services:
       - "8080:8080"
     environment:
       - PORT=8080
-      - ENVIRONMENT=development
+      - NODE_ENV=development
       - PERSISTENCE=true
     volumes:
       - .:/usr/src/app

@@ -17,4 +17,5 @@ start: build run
 .PHONY: test
 test:
 	@echo "Running tests..."
-	docker-compose -f $(DOCKER_COMPOSE_FILE) run app npm run test
+	docker-compose -f $(DOCKER_COMPOSE_FILE) up -d
+	docker-compose -f $(DOCKER_COMPOSE_FILE) exec app sh -c "NODE_ENV=test npm run test"

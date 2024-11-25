@@ -39,7 +39,7 @@ router.get("/", async (req: Request, res: Response): Promise<void> => {
         res.status(500).json({ error: "Internal server error" });
         console.error(error);
 
-        if (process.env.ENVIRONMENT === "development") {
+        if (process.env.NODE_ENV === "development") {
           throw error;
         }
     }

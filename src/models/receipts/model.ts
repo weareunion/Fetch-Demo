@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
-import UserPresentableError from "../../_common/exceptions/UserPresentableError";
+import UserPresentableError from "../../common/exceptions/UserPresentableError";
 import db from "../../_demo/DB";
-import { generateUUID } from "../../_common/helpers";
+import { generateUUID } from "../../common/helpers";
 import pointsRouter from "./points/model";
 import { transformReceiptData } from "./_helpers";
 import { sanitizeReceipt } from "./_helpers/sanitization";
@@ -91,7 +91,7 @@ router.post("/process", (req: Request, res: Response): void => {
       // Or at least error logging system to inform
       console.error('Error transforming receipt data:', error);
 
-      if (process.env.ENVIRONMENT === "development") {
+      if (process.env.NODE_ENV === "development") {
         throw error;
       }
     }

@@ -11,7 +11,7 @@ export * from "./pointsCalculator";
  */
 import { validateDataObject } from "./validation";
 import { extractRetailer, extractPurchaseDate, extractPurchaseTime, extractItems, extractTotal } from "./extraction";
-import UserPresentableError from "../../../_common/exceptions/UserPresentableError";
+import UserPresentableError from "../../../common/exceptions/UserPresentableError";
 import { Receipt } from "../_types/Reciept";
 
 export function transformReceiptData(data: unknown): Receipt {

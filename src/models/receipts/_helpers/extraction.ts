@@ -1,5 +1,5 @@
 import { validateTrimmedString, validateDateString, validateNumberString } from "./validation";
-import UserPresentableError from "../../../_common/exceptions/UserPresentableError";
+import UserPresentableError from "../../../common/exceptions/UserPresentableError";
 import { Item, Receipt } from "../_types/Reciept";
 
 /**

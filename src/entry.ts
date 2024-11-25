@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = process.env.NODE_ENV === "test" ? 3001 : process.env.PORT;
 
 // ---- Middleware ----
 

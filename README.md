@@ -179,7 +179,7 @@ The application uses environment variables for configuration. These are defined 
 ```yaml
 environment:
   - PORT=8080 # the port the server will listen on
-  - ENVIRONMENT=development # or production - this will affect error handling
+  - NODE_ENV=development # or production - this will affect error handling
   - PERSISTENCE=true # set to false to disable data persistence
 ```
 
