@@ -28,7 +28,7 @@ Data is stored in-memory using a `Map` data structure, ensuring quick access and
 
 ### Prerequisites
 
-- **Docker**: Ensure Docker is installed on your Macbook Pro M1 Max running macOS 15.1.
+- **Docker**: Ensure Docker is installed. Just for context, I am using a Macbook Pro M1 Max running macOS 15.1, however, docker is platform independent.
 - **Docker Compose**: Included with Docker Desktop or install separately.
 
 ### Installation
